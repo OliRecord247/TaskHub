@@ -1,6 +1,12 @@
-@TaskHub.Api_HostAddress = http://localhost:5006
+@HostAddress = http://localhost:5006
+@ID=e4827f4c-c1dd-481e-92a3-277ef68d8910
 
-GET {{TaskHub.Api_HostAddress}}/weatherforecast/
+GET {{HostAddress}}/api/board/all
+Accept: application/json
+
+###
+
+GET {{HostAddress}}/api/board/{{ID}}
 Accept: application/json
 
 ###
