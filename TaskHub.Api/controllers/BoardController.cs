@@ -5,9 +5,15 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api/[controller]")]
 public class BoardController : ControllerBase
 {
-    [HttpGet("/boards/")]
-    public IActionResult Hello()
+    [HttpGet("all")]
+    public IActionResult GetAll()
     {
-        return Ok("Hello from BoardController!");
+        return Ok(new[] { new { id = Guid.NewGuid() }, new { id = Guid.NewGuid() } });
+    }
+
+    [HttpGet("{id:guid}")]
+    public IActionResult Get(Guid id)
+    {
+        return Ok(new { id });
     }
 }
